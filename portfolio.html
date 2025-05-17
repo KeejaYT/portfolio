@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title & Fonts -->
+    <title>Keeja | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* ===== Base ===== */
+      :root {
+        --accent: #e50914;
+        --bg-dark: #000;
+        --bg-lighter: #111;
+        --text-light: #eee;
+        --text-muted: #777;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ===== Layout ===== */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #222;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+      nav a:hover {
+        opacity: 0.75;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+      .section-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      /* ===== About ===== */
+      .about p {
+        margin-bottom: 0.75rem;
+      }
+
+      /* ===== Project Card ===== */
+      .card {
+        background: var(--bg-lighter);
+        border: 1px solid #222;
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .card-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        background: var(--accent);
+        color: var(--bg-dark);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+      .card-links {
+        display: flex;
+        gap: 1rem;
+      }
+      .card-links a {
+        font-weight: 500;
+      }
+      .card-links a:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        border-top: 1px solid #222;
+      }
+
+      /* ===== Responsive tweaks ===== */
+      @media (min-width: 600px) {
+        .card {
+          flex-direction: row;
+        }
+        .card img {
+          width: 45%;
+          border-radius: 4px;
+        }
+        .card-body {
+          flex: 1;
+          padding-left: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Keeja</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- === About Section === -->
+      <section id="about" class="section about">
+        <h2 class="section-title">About Me</h2>
+        <p>Hi, I’m <strong>Keeja</strong> — a college student sharpening my front‑end skills through side projects and contributing to community dev work like <a href="https://zwr.gg/" target="_blank" rel="noopener">zwr.gg</a>.</p>
+        <p>Right now I’m focused on HTML/CSS UI recreations and leveling up my JavaScript to build more interactive sites (next stop: Amazon!).</p>
+      </section>
+
+      <!-- === Projects Section === -->
+      <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <!-- Project Card: YouTube Clone -->
+        <article class="card">
+          <img src="yt-ss.png" alt="YouTube Clone screenshot placeholder" />
+
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">YouTube UI Clone</h3>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">Flexbox</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+            <p>A pixel‑perfect recreation of YouTube’s homepage layout to practice modern CSS techniques like grid, flexbox, and custom tooltip positioning.</p>
+            <div class="card-links">
+              <a href="https://github.com/KeejaYT/YouTube-Test" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Keeja — Portfolio.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
